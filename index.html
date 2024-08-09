@@ -1,93 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSON Flattener</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
-    h1 {
-        text-align: center;
-    }
-    .container {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-    }
-    textarea {
-        width: 45%;
-        height: 400px;
-        padding: 10px;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    .btn {
-        display: block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-    .btn:hover {
-        background-color: #0056b3;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazien</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="header.js"></script>
 </head>
 <body>
-    <h1>JSON Flattener</h1>
-    <div class="container">
-        <textarea id="jsonInput" placeholder="Enter JSON here..."></textarea>
-        <textarea id="flattenedJson" placeholder="Flattened JSON will appear here..." readonly></textarea>
-    </div>
-    <button class="btn" onclick="flattenJson()">Flatten JSON</button>
-
-    <script>
-        function flattenJson() {
-            try {
-                const jsonInput = document.getElementById('jsonInput').value;
-                const jsonObject = JSON.parse(jsonInput);
-                const flattened = flatten(jsonObject);
-                document.getElementById('flattenedJson').value = JSON.stringify(flattened, null, 2);
-            } catch (error) {
-                alert('Invalid JSON input. Please check your JSON format and try again.');
-            }
-        }
-
-        function flatten(data) {
-            const result = {};
-
-            function recurse(cur, prop) {
-                if(cur['value']!=null){
-                    if(cur['value'][0]==='{'){
-                    result[prop] = cur;
-                }
-                }
-                else if (Object(cur) !== cur || Array.isArray(cur)) {
-                    result[prop] = cur;
-                } else {
-                    let isEmpty = true;
-                    
-                    for (const p in cur) {
-                        isEmpty = false;
-                        recurse(cur[p], prop ? `${prop}.${p}` : p);
-                    }
-                    if (isEmpty && prop) {
-                        result[prop] = {};
-                    }
-                }
-            }
-
-            recurse(data, '');
-            return result;
-        }
-    </script>
+    <h1>Kaizen Ops</h1>
 </body>
 </html>
