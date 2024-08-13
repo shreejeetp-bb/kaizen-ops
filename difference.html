@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Token Difference Generator</title>
+<link rel="stylesheet" href="tab.css">
+<link rel="stylesheet" href="styles.css">
+<script src="header.js"></script>
+</head>
+<body>
+    
+    <h1>Difference Generator</h1>
+    <div id="input-form">
+        <div" class="container">
+            <textarea id="jsonInput" placeholder="Enter Token JSON here..."></textarea>
+            <textarea id="jsonInput2" placeholder="Flattened JSON will appear here..."></textarea>
+        </div>
+        <button class="btn" onclick="differenceFinder()">Find Difference</button>
+    </div>
+    <div id="output-form" class="display-none">
+        <div class="container">
+            <textarea id="difference-box" placeholder=""></textarea>
+        </div>
+        
+        <button class="btn" onclick="goBack()">Go Back</button>
+    </div>
+
+    <script src="flattener.js"></script>
+    <script src="difference.js"></script>
+</body>
+</html>

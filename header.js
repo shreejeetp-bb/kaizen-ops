@@ -35,6 +35,7 @@ function createHeader() {
     const pages = [
         { name: 'Home', url: 'index.html' },
         { name: 'Flattener', url: 'flattener.html' },
+        { name: 'Difference Generator', url: 'difference.html' },
     ];
 
     // Create header container

@@ -14,9 +14,9 @@ function flatten(data) {
 
     function recurse(cur, prop) {
         if(cur['value']!=null){
-            if(cur['value'][0]==='{'){
-            result[prop] = cur;
-        }
+            if(cur['value']){
+                result[prop] = cur;
+            }
         }
         else if (Object(cur) !== cur || Array.isArray(cur)) {
             result[prop] = cur;
