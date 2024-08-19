@@ -36,6 +36,7 @@ function createHeader() {
         { name: 'Home', url: 'index.html' },
         { name: 'Flattener', url: 'flattener.html' },
         { name: 'Difference Generator', url: 'difference.html' },
+        { name: 'Page Builder Helper', url: 'pb_helper/index.html' },
     ];
 
     // Create header container
